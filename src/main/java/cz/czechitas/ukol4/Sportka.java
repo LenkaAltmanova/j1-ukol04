@@ -17,17 +17,39 @@ public class Sportka {
 
         }
     }
+    //naplnit osudí čísly 1 až 49
+
+    /**
+     * Zamíchá osudí.
+     *
+     * @see Collections#shuffle(List)
+     */
 
     public void zamichat() {
 
         Collections.shuffle(osudi);
+        //System.out.println(osudi);
 
     }
+
+    /**
+     * Vrátí seznam s 6 vylosovanými čísly.
+     *
+     * @return Seznam vylosovaných čísel.
+     *
+     * @see List#subList(int, int)
+     */
 
     public List<Integer> vylosovanaCisla() {
-        List<Integer> top6 = new ArrayList<Integer>(osudi.subList(Math.max(osudi.size() - 6, 0), osudi.size()));
+        List<Integer> top6 = new ArrayList<Integer>(osudi.subList(0,6));
         return top6;
     }
+
+    /**
+     * Vrátí sedmé vylosované číslo (dodatkové číslo)
+     *
+     * @return Dodatkové číslo.
+     */
 
     public Integer dodatkoveCislo() {
         return osudi.get(6);
